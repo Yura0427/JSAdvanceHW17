@@ -1,0 +1,20 @@
+.form-control{
+    margin: 0 1%;
+    width: 73%;
+    float: left;
+}
+.col-md-auto{
+    margin-top: 55px;
+}
+#add,
+#save{
+    margin: 0 1%;
+    width: 23%;
+    float: right;
+}
+h1{
+    text-align: center;
+}
+.bad{
+    border: 2px solid red;
+}

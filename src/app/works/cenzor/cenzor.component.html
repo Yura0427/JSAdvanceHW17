@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link">Last works >>> </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/works/cenzor']">Cenzor</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/works/userslist']">UsersList</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/works/tasklist']">TaskList</a>
+      </li>
+    </ul>
+    <div class="my-2 my-lg-0">
+      <a class="nav-link" [routerLink]="[ '/home']" routerLinkActive="active">Back to >>> Home</a>
+    </div>
+  </div>
+</nav>
+
+<form name="f1">
+    <p>Bad words:</p><output name="txt"></output><br>
+    <input type="text" placeholder="word here..." name="txtAdd">
+    <input type="button" name="btnAdd" value="Add" (click)="addWord()">
+    <input type="button" name="btnRes"  value="Res" (click)="resForm()"><br>
+    <input type="text" placeholder="text here..." name="txtCen"><br>
+    <input type="button" name="btnCen"  value="Cenzor" (click)="cenTxt()">
+</form>

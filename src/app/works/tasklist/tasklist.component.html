@@ -1,0 +1,62 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link">Last works >>> </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/works/cenzor']">Cenzor</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/works/userslist']">UsersList</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/works/tasklist']">TaskList</a>
+      </li>
+    </ul>
+    <div class="my-2 my-lg-0">
+      <a class="nav-link" [routerLink]="[ '/home']" routerLinkActive="active">Back to >>> Home</a>
+    </div>
+  </div>
+</nav>
+
+<h1>Angular users task</h1>
+<h2>Count of Task: {{arrTask.length}}</h2>
+<div class="form-group">
+  <input type="text" class="form-control" [(ngModel)]="name" name="name" [ngClass]="{'bad': valueStatus}">
+  <button id="add" class="btn btn-primary" (click)="addTask()">Add</button>
+</div>
+<div class="col-md-auto">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Task</th>
+        <th>Check</th>
+        <th>Done/In progress</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let task of arrTask; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{task.name}}</td>
+        <td><input type="checkbox" name="" id="" (click)="chec($event, i)"></td>
+        <td *ngIf="task.process">Done</td>
+        <td *ngIf="!task.process">In progress</td>
+        <td>
+          <input (click)="editTask(i)" type="button" value="Edit" class="btn btn-warning">
+        </td>
+        <td>
+          <input *ngIf="task.process" (click)="deleteTask(i)" type="button" value="delete" class="btn btn-danger">
+          <input *ngIf="!task.process" type="button" value="delete" class="btn btn-danger" disabled>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<div class="form-group">
+  <input *ngIf="editStatus" type="text" class="form-control" [(ngModel)]="editName" name="editName">
+  <button *ngIf="editStatus" type="button" class="btn btn-success" (click)="saveEdit()" id="save">Save</button>
+</div>

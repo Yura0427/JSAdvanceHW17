@@ -1,0 +1,18 @@
+.addUser{
+    display: flex;
+    flex-direction: column;
+    width: 47%;
+    margin: 0 1%;
+    float: left;
+}
+.col-6{
+    float: right;
+    width: 47%;
+    margin: 0 1%;
+}
+h1{
+    text-align: center;
+}
+.bad{
+    border: 2px solid red;
+}
